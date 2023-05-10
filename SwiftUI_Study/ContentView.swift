@@ -31,17 +31,21 @@ struct ContentView: View {
                 Text("Email address")
                     .fontWeight(.semibold)
                 TextField("Email address", text: $email)
-                    .textFieldStyle(.roundedBorder)
+                    .font(.headline)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.gray.opacity(0.4), lineWidth: 2).frame(height: 50))
                     .focused($focusField, equals: .email)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 15)
                 
                 // pw text, textfield
                 Text("Password")
                     .fontWeight(.semibold)
                 SecureField("Password", text: $password)
-                    .textFieldStyle(.roundedBorder)
+                    .font(.headline)
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.gray.opacity(0.4), lineWidth: 2).frame(height: 50))
                     .focused($focusField, equals: .password)
-                    .padding(.bottom, 20)
+                    .padding(.bottom, 10)
                 
                 // find pw button
                 Button("Forgot password?") {
@@ -59,6 +63,7 @@ struct ContentView: View {
             .padding(.top, 40)
             .padding(.leading, 20)
             .padding(.trailing, 20)
+            .padding(.bottom, 20)
             
             VStack(alignment: .center, spacing: 20) {
                 Button {
