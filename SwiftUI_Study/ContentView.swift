@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  ProfileView.swift
 //  SwiftUI_Study
 //
 //  Created by Jade Yoo on 2023/05/10.
@@ -12,7 +12,7 @@ enum Field {
     case password
 }
 
-struct ContentView: View {
+struct ProfileView: View {
     @FocusState private var focusField: Field?
     
     @State private var email: String = ""
@@ -48,17 +48,9 @@ struct ContentView: View {
                     .padding(.bottom, 10)
                 
                 // find pw button
-                Button("Forgot password?") {
-                    if email.isEmpty {
-                        focusField = .email
-                    } else if password.isEmpty {
-                        focusField = .password
-                    } else {
-                        print("Complete Email & Password Input")
-                    }
-                }
-                .foregroundColor(.purple)
-                .bold()
+                Button("Forgot password?") { }
+                    .foregroundColor(.blue)
+                    .bold()
             }
             .padding(.top, 40)
             .padding(.leading, 20)
@@ -67,7 +59,13 @@ struct ContentView: View {
             
             VStack(alignment: .center, spacing: 20) {
                 Button {
-                    
+                    if email.isEmpty {
+                        focusField = .email
+                    } else if password.isEmpty {
+                        focusField = .password
+                    } else {
+                        print("Complete Email & Password Input")
+                    }
                 } label: {
                     Text("Log in")
                         .frame(maxWidth: .infinity, minHeight: 45)
@@ -95,8 +93,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ProfileView()
     }
 }
