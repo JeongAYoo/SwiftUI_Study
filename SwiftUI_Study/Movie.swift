@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Movie: Codable {
-    var id: String
+struct Movie: Codable, Identifiable {
+    var id: Int
     var title: String
+    var release_date: String
     var poster_path: String
-    var vote_average: String
+    var vote_average: Double
 }
